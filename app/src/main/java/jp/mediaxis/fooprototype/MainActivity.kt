@@ -1,8 +1,9 @@
 package jp.mediaxis.fooprototype
 
-import android.support.v7.app.AppCompatActivity
+import android.databinding.DataBindingUtil
 import android.os.Bundle
-import com.orhanobut.logger.Logger
+import android.support.v7.app.AppCompatActivity
+import jp.mediaxis.fooprototype.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -10,8 +11,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Logger.d("debug")
-        Logger.w("warning")
-        Logger.e("error")
+        setupBinding()
+    }
+
+    private fun setupBinding() {
+        val user = User("Sato", 28)
+        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(
+                this,
+                R.layout.activity_main
+        )
+        binding.user = user
     }
 }
