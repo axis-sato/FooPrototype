@@ -2,12 +2,12 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="jp.mediaxis.fooprototype.MainActivity">
+    tools:context="jp.mediaxis.fooprototype.Views.MainActivity">
 
     <data>
         <variable
-            name="user"
-            type="jp.mediaxis.fooprototype.User" />
+            name="viewModel"
+            type="jp.mediaxis.fooprototype.Views.MainViewModel" />
     </data>
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="48dp"
-            android:text="@{user.name}"
+            android:text="@{viewModel.userName}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.367"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,9 +41,22 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:layout_marginTop="8dp"
-            android:text="@{Integer.toString(user.age)}"
+            android:text="@{viewModel.userAge}"
             app:layout_constraintStart_toEndOf="@+id/userNameTextView"
             app:layout_constraintTop_toTopOf="@+id/userNameTextView" />
+
+        <Button
+            android:id="@+id/button"
+            android:onClick="@{viewModel.onClickButton}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 </layout>
