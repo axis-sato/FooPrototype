@@ -4,11 +4,11 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import jp.mediaxis.fooprototype.R
-import jp.mediaxis.fooprototype.Entities.User
+import jp.mediaxis.fooprototype.Repositories.UserRepository
 import jp.mediaxis.fooprototype.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private val viewModel = MainViewModel(User("Sato", 28))
+    private val viewModel = MainViewModel(UserRepository())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

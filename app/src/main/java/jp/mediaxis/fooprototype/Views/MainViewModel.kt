@@ -1,11 +1,12 @@
 package jp.mediaxis.fooprototype.Views
 
-import android.databinding.BaseObservable
 import android.view.View
 import com.orhanobut.logger.Logger
 import jp.mediaxis.fooprototype.Entities.User
+import jp.mediaxis.fooprototype.Repositories.UserRepositoryInterface
 
-class MainViewModel(private val user: User): BaseObservable() {
+class MainViewModel(private val userRepository: UserRepositoryInterface) {
+    private val user: User = userRepository.getUser()
 
     var userName: String = ""
         get() = user.name
