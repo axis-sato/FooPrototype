@@ -6,6 +6,7 @@ import jp.mediaxis.fooprototype.Entities.User
 import jp.mediaxis.fooprototype.Repositories.UserRepositoryInterface
 
 class MainViewModel(private val userRepository: UserRepositoryInterface) {
+
     private val user: User = userRepository.getUser()
 
     var userName: String = ""
